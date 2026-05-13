@@ -35,6 +35,7 @@ type BaseCopy = {
     modules: string;
     providers: string;
     pricing: string;
+    docs: string;
     signIn: string;
     start: string;
     languages: string;
@@ -140,6 +141,7 @@ const baseCopy: Record<Locale, BaseCopy> = {
       modules: "Módulos",
       providers: "Proveedores",
       pricing: "Planes",
+      docs: "Centro de ayuda",
       signIn: "Ingresar",
       start: "Solicitar acceso",
       languages: "Idioma",
@@ -417,6 +419,7 @@ const baseCopy: Record<Locale, BaseCopy> = {
       modules: "Modules",
       providers: "Providers",
       pricing: "Pricing",
+      docs: "Help center",
       signIn: "Sign in",
       start: "Request access",
       languages: "Language",

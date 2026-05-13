@@ -41,6 +41,7 @@ export function SiteHeader({ locale, country, copy }: SiteHeaderProps) {
   const modulesHref = `${homeHref}#modules`;
   const providersHref = `${homeHref}#providers`;
   const pricingHref = buildMarketHref(locale, country, "pricing");
+  const docsHref = buildMarketHref(locale, country, "docs");
 
   const localeHref = (nextLocale: Locale) => buildMarketHref(nextLocale, country, restPath);
 
@@ -66,7 +67,14 @@ export function SiteHeader({ locale, country, copy }: SiteHeaderProps) {
         <div className="nav-shell">
           <div className="nav-brand-row">
             <Link href={homeHref} className="nav-brand" aria-label="WIM home">
-              <Image src="/logo.svg" alt="WIM" width={120} height={32} priority />
+              <Image
+                src="/logo.png"
+                alt="WIM"
+                width={168}
+                height={40}
+                className="nav-brand-logo"
+                priority
+              />
             </Link>
 
             <nav className="nav-primary" aria-label="Primary">
@@ -78,6 +86,9 @@ export function SiteHeader({ locale, country, copy }: SiteHeaderProps) {
               </Link>
               <Link href={pricingHref} className="nav-link">
                 {copy.navigation.pricing}
+              </Link>
+              <Link href={docsHref} className="nav-link">
+                {copy.navigation.docs}
               </Link>
             </nav>
           </div>
@@ -140,6 +151,9 @@ export function SiteHeader({ locale, country, copy }: SiteHeaderProps) {
               </Link>
               <Link href={pricingHref} className="mobile-nav-link" onClick={closeMenu}>
                 {copy.navigation.pricing}
+              </Link>
+              <Link href={docsHref} className="mobile-nav-link" onClick={closeMenu}>
+                {copy.navigation.docs}
               </Link>
             </div>
 

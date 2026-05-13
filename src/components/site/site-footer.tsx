@@ -36,6 +36,7 @@ export function SiteFooter({ locale, country, copy }: SiteFooterProps) {
             <h4>{copy.footer.product}</h4>
             <Link href={`${buildMarketHref(locale, country)}#modules`}>{copy.navigation.modules}</Link>
             <Link href={buildMarketHref(locale, country, "pricing")}>{copy.navigation.pricing}</Link>
+            <Link href={buildMarketHref(locale, country, "docs")}>{copy.navigation.docs}</Link>
           </div>
 
           <div>

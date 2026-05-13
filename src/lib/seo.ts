@@ -8,6 +8,7 @@ import {
   type Locale,
 } from "@/lib/site-config";
 import { legalPageSlugs } from "@/lib/legal-content";
+import { DOCS_ARTICLE_ORDER } from "@/lib/docs-content";
 
 export const siteUrl = "https://billbywim.com";
 
@@ -142,7 +143,7 @@ export function getGlobalSeoSchemas() {
       "@type": "Organization",
       name: "WIM",
       url: siteUrl,
-      logo: buildAbsoluteUrl("/logo.svg"),
+      logo: buildAbsoluteUrl("/logo.png"),
       sameAs: [],
     },
     {
@@ -192,5 +193,30 @@ export function getSitemapEntries() {
     })),
   );
 
-  return [...homes, ...pricing, ...legal];
+  const docsIndex = getMarketParams().map(({ locale, country }) => ({
+    url: buildAbsoluteMarketUrl(locale, country, "docs"),
+    lastModified: today,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+    alternates: {
+      languages: getLocalizedAlternates("docs"),
+    },
+  }));
+
+  const docsArticles = getMarketParams().flatMap(({ locale, country }) =>
+    DOCS_ARTICLE_ORDER.map((slug) => {
+      const path = `docs/${slug}`;
+      return {
+        url: buildAbsoluteMarketUrl(locale, country, path),
+        lastModified: today,
+        changeFrequency: "weekly" as const,
+        priority: 0.7,
+        alternates: {
+          languages: getLocalizedAlternates(path),
+        },
+      };
+    }),
+  );
+
+  return [...homes, ...pricing, ...legal, ...docsIndex, ...docsArticles];
 }
