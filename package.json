@@ -21,7 +21,7 @@
     "wrangler": "^4.71.0"
   },
   "scripts": {
-    "build": "next build",
+    "build": "next build --webpack",
     "check": "opennextjs-cloudflare build && tsc && wrangler deploy --dry-run",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "dev": "next dev",

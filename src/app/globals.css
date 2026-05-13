@@ -147,6 +147,13 @@ ul {
   align-items: center;
 }
 
+.nav-brand-logo {
+  height: 40px;
+  width: auto;
+  max-width: 168px;
+  object-fit: contain;
+}
+
 .nav-primary {
   display: flex;
   align-items: center;
