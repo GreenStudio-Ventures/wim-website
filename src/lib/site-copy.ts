@@ -357,7 +357,7 @@ const baseCopy: Record<Locale, BaseCopy> = {
         },
         {
           name: "Operator",
-          priceLabel: "Desde $349 USD / mes",
+          priceLabel: "Desde $100 USD / mes",
           description:
             "Para resellers que ya facturan mensual y necesitan estabilizar la operación.",
           features: [
@@ -634,7 +634,7 @@ const baseCopy: Record<Locale, BaseCopy> = {
         },
         {
           name: "Operator",
-          priceLabel: "From $349 USD / mo",
+          priceLabel: "From $100 USD / mo",
           description: "For resellers that already bill monthly and need to stabilize ops.",
           features: [
             "Up to 1,000 active subscriptions",
